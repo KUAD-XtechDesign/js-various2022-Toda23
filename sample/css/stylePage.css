@@ -1,0 +1,191 @@
+@charset "utf-8";
+ 
+/* クリックしたら波紋が広がる */
+ 
+.btnripple{
+    /*波紋の基点とするためrelativeを指定*/
+  position: relative;
+    /*はみ出す波紋を隠す*/
+  overflow: hidden;
+    /*ボタンの形状*/
+    text-decoration: none;
+  display:inline-block;
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+    outline: none;
+}
+ 
+.btnripple::after {
+    content: "";
+    /*絶対配置で波紋位置を決める*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*波紋の形状*/
+    background: radial-gradient(circle, #fff 10%, transparent 10%) no-repeat 50%;
+    transform: scale(10, 10);
+    /*はじめは透過0に*/
+    opacity: 0;
+    /*アニメーションの設定*/
+    transition: transform 0.3s, opacity 1s;
+}
+ 
+/*クリックされたあとの形状の設定*/
+    .btnripple:active::after {
+    transform: scale(0, 0);
+    transition: 0s;
+    opacity: 0.3;
+}
+ 
+ 
+/*========= レイアウトのためのCSS ===============*/
+ 
+body{
+    vertical-align:middle;
+    padding: 100px 0;
+    text-align: center;
+}
+ 
+p{
+    margin: 0 0 10px 0;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+/*ろーど////////////////////
+@charset "utf-8";
+/*========= LoadingのためのCSS ===============*/
+ 
+/* Loading背景画面設定　*/
+ 
+#splash {
+    /*fixedで全面に固定*/
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background:#333;
+  text-align:center;
+  color:#fff;
+}
+ 
+/* Loadingバー中央配置　*/
+#splash_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+    z-index: 999;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+ 
+/*IE11対策用バーの線の高さ※対応しなければ削除してください*/
+#splash_text svg{
+    height: 2px;
+}
+ 
+/*========= レイアウトのためのCSS ===============*/
+ 
+ 
+#container{
+    width:100%;
+    height: 100vh;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+ 
+ 
+a{
+    color: #333;
+}
+ 
+a:hover{
+     text-decoration: none;  
+}
+ 
+ 
+
+
+/*========= まつもとさんパーティクルコピペ===============*/
+
+#container{
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .item{
+    position: absolute;
+    left: 50%;
+    transform-origin: top center;
+    pointer-events: none;
+  }
+  
+  .object{
+    width: 50px;
+    height: 50px;
+    background-color: #f00;
+    opacity: 0.4;
+    border-radius: 10px;
+    pointer-events:all;
+  }
+  
+  .object.anim {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-timing-function: ease-in;
+  }
+  
+  @keyframes move{
+    0%{
+      transform:translate(0,0);
+    }
+    
+    100%{
+      transform: translate(0,1000px) rotate(300deg);
+    }
+  }
+  
+  .buttons{
+    display: flex;
+    position: absolute;
+    top:0;
+  }
+  
+  .button{
+    padding:10px;
+    margin: 10px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+  #container.star .object{
+    background-image: url(https://www.pngfind.com/pngs/b/692-6924948_mario-png.png);
+    background-size: contain;
+    background-color: transparent;
+    opacity: 1;
+  }
+  
+  #container.circle .object{
+    border-radius: 50%;
+    background-color: #00f;
+  }
+  
+  #container.rectangle .object{
+    width: 100px;
+    border-radius: 0;
+    background-color: #0f0;
+  }
+ 

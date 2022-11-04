@@ -1,0 +1,69 @@
+#container{
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .item{
+    position: absolute;
+    left: 50%;
+    transform-origin: top center;
+    pointer-events: none;
+  }
+  
+  .object{
+    width: 50px;
+    height: 50px;
+    background-color: #f00;
+    opacity: 0.4;
+    border-radius: 10px;
+    pointer-events:all;
+  }
+  
+  .object.anim {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-timing-function: ease-in;
+  }
+  
+  @keyframes move{
+    0%{
+      transform:translate(0,0);
+    }
+    
+    100%{
+      transform: translate(0,1000px) rotate(300deg);
+    }
+  }
+  
+  .buttons{
+    display: flex;
+    position: absolute;
+    top:0;
+  }
+  
+  .button{
+    padding:10px;
+    margin: 10px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+  #container.star .object{
+    background-image: url(https://www.pngfind.com/pngs/b/692-6924948_mario-png.png);
+    background-size: contain;
+    background-color: transparent;
+    opacity: 1;
+  }
+  
+  #container.circle .object{
+    border-radius: 50%;
+    background-color: #00f;
+  }
+  
+  #container.rectangle .object{
+    width: 100px;
+    border-radius: 0;
+    background-color: #0f0;
+  }
