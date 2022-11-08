@@ -1,4 +1,45 @@
-@charset "utf-8";
+@charset "UTF-8";
+
+
+.ana1 {
+display: inline-block;
+margin-top: 2%;
+}
+
+.header {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgb(210, 210, 210);
+}
+
+.header ul{
+  display: flex;
+}
+
+.header ul li{
+  width:200px ;
+  min-width: 10%;
+  text-align: center;
+  border-right:1px solid rgb(51, 51, 51);
+}
+
+.header ul li:first-child{
+ border-left:1px solid rgb(51,51,51) ;
+}
+
+.header ul li a {
+  display: block;
+}
+
+
+.header_img{
+  text-align: center;
+}
+
+.header_img img {
+  display: inline-block;
+} 
+
  
 /* クリックしたら波紋が広がる */
  
@@ -45,15 +86,20 @@
 /*========= レイアウトのためのCSS ===============*/
  
 body{
-    vertical-align:middle;
+  font-family: "Hiragino Kaku Gothic Pro","Meiryo",sans-serif;
+font-size: 15px;
+  vertical-align:middle;
     padding: 100px 0;
     text-align: center;
+    border-top: 10px solid rgb(178, 178, 255) !important;
+
 }
  
 p{
     margin: 0 0 10px 0;
 }
  
+
  
  
  
