@@ -1,7 +1,7 @@
 
 
-//ボタンの設定
-$('.button').on('click',function(){
+  //ボタンの設定
+  $('.button').on('click',function(){
     console.log($(this).attr('id'));
     $("#container").removeClass();
     $("#container").addClass($(this).attr('id'));
