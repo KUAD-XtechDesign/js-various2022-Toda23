@@ -83,4 +83,7 @@
 .frame_center {
   text-align: center;
   margin-left: 0%;
+  cursor: none !important;
 }
+
+
